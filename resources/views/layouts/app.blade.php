@@ -8,9 +8,26 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+   <script src="{{ asset('js/app.js') }}" ></script>
+    <script type="text/javascript" src={{ asset("/js/plugins/loaders/pace.min.js") }}></script>
+    <script type="text/javascript" src={{ asset("/js/core/libraries/jquery.min.js") }}></script>
+    <script type="text/javascript" src={{ asset("/js/jquery.chained.min.js") }}></script>
+    <script type="text/javascript" src={{ asset("/js/core/libraries/bootstrap.min.js") }}></script>
+    <script type="text/javascript" src={{ asset("/js/datatables/datatables.min.js") }} ></script>
+    <script type="text/javascript" src={{ asset("/js/plugins/forms/selects/select2.min.js") }} ></script>
+    <script type="text/javascript" src={{ asset("/js/datatables/extensions/jszip/jszip.min.js") }} ></script>
+    <script type="text/javascript" src={{ asset("/js/datatables/extensions/pdfmake/pdfmake.min.js") }} ></script>
+    <script type="text/javascript" src={{ asset("/js/datatables/extensions/pdfmake/vfs_fonts.min.js") }} ></script>
+    <script type="text/javascript" src={{ asset("/js/datatables/extensions/buttons.min.js") }} ></script>
+    <script type="text/javascript" src={{ asset("/js/pages/datatables_extension_buttons_html5.js") }} ></script>
+    <script type="text/javascript" src={{ asset("/js/plugins/forms/styling/switchery.min.js") }} ></script>
+    <script type="text/javascript" src={{ asset("/js/plugins/forms/styling/switch.min.js") }} ></script>
+    <script type="text/javascript" src={{ asset("/js/plugins/forms/styling/uniform.min.js") }} ></script>
+    <script type="text/javascript" src={{ asset("/js/plugins/forms/selects/bootstrap_multiselect.js") }} ></script>
+    <script type="text/javascript" src={{ asset("/js/pages/form_checkboxes_radios.js") }} ></script>
+    <script type="text/javascript" src={{ asset("/js/plugins/forms/validation/validate.min.js") }} ></script>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+ 
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +35,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset("/css/icons/icomoon/styles.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("/css/core.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("/css/components_2.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("/css/colors.css")}}" rel="stylesheet" type="text/css" /
 </head>
 <body>
     <div id="app">
