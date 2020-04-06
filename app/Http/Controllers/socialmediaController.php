@@ -96,14 +96,18 @@ public function store(Request $request)
 		
 		// facebook posting
 		$responseID = 0;
-		$facebook_class = new GraphController;
+		$result = 'failed';
+		$result_data = '';
+		
+		try{
+		$facebook_class = new GraphController($fb);
 		$newrequest = new \Illuminate\Http\Request();
 		$newrequest->replace(['message' => $request->get('heading')]);
 		$newrequest->replace(['source' => public_path().'/uploads/'.$imagesavename]);
         $responseID = $facebook_class->publishToProfile($newrequest);
-		
-		$result = 'failed';
-		$result_data = '';
+		} catch (\Exception $e) {
+			$result_data = $e->getMessage();
+		}
 		
 		if($responseID > 0)
 		{

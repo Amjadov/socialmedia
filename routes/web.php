@@ -12,11 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/login/facebook', 'Auth\LoginController@redirectToFacebookProvider');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderFacebookCallback');
+
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
+
+Route::get('/login/facebook', 'Auth\LoginController@redirectToFacebookProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderFacebookCallback');
 
 Route::group(['middleware' => [
     'auth'
