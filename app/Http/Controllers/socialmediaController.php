@@ -53,7 +53,7 @@ class socialmediaController extends Controller
 	  
 	  //save record of uploaded file in db
 		$newfile = new uploadedfile([
-          'filetype' => 'image',
+          'filetype' => $filememetype,
           'originalname' => $filename,
           'extension' => $fileextension,
           'realpath' => $filerealpath,

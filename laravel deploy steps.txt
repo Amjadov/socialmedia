@@ -1,0 +1,33 @@
+1- cut .htaccess and index.php from public folder to root folder
+
+2- modify index.php and remove ../ from lines 24 and 38
+
+3- modify vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php
+
+change the following function to this:
+
+public function asset($path, $secure = null)
+{
+    if ($this->isValidUrl($path)) {
+
+
+        return $path;
+    }
+
+    // Once we get the root URL, we will check to see if it contains an index.php
+    // file in the paths. If it does, we will remove it since it is not needed
+    // for asset paths, but only for routes to endpoints in the application.
+    $root = $this->assetRoot
+                ? $this->assetRoot
+                : $this->formatRoot($this->formatScheme($secure));
+
+    // Following 2 lines were added
+    if($_SERVER['REMOTE_ADDR'] != '127.0.0.1')
+        $root .= '/public';
+
+    return $this->removeIndex($root).'/'.trim($path, '/');
+}
+
+4- modify .env to set the database details
+
+5- thats it, you are good to go 
